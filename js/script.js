@@ -25,8 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
                         <span>${item.rus}</span>
                     </div>
                     <tr>
-                    <td><button class="to_learn__btn">Еще учить</button></td>
-                    <td><button class="learnt__btn">Выучил</button></td>
+                    <td><button class="to_learn__btn">В словарь</button></td>
+                    <td><button class="learnt__btn">Знаю</button></td>
                     </tr>
         `;
             wordsWrapper.appendChild(card);
@@ -48,11 +48,14 @@ window.addEventListener('DOMContentLoaded', () => {
         const wordsTitle = document.querySelector('.cart__title');
         let startBtn = document.createElement('div');
         startBtn.innerHTML = '<button class="start__btn">Старт</button>';
+        let mins = document.createElement('div');
+        mins.classList.add('minutes');
+        mins.innerHTML = 'Длительность в минутах: <input type=number class="raz" id="mins" value="1" min="1" max="6">';
         startBtn.addEventListener('click', () => {
             onStartClick(arr);
         });
         wordsTitle.appendChild(startBtn);
-
+        wordsTitle.appendChild(mins);
 
         openBtn.addEventListener('click', () => {
             memory_cart.style.display = 'block';
@@ -79,11 +82,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         id = setInterval(showWord, 100);
+        let stop = document.querySelector('.raz');
+        let stopTime = stop.valueAsNumber * 60000;
+        console.log(stopTime);
         setTimeout(function () {
             clearInterval(id);
             let wCoup = memory_cart.querySelector('.word_couple');
             wCoup.innerText = "";
-        }, 5000);
+        }, stopTime);
 
         function showWord() {
             let wCoup = memory_cart.querySelector('.word_couple');
@@ -94,7 +100,6 @@ window.addEventListener('DOMContentLoaded', () => {
             let word = arr[Math.floor(Math.random() * arr.length)];
             let h = document.createElement('h1');
             let rotation = Math.round((Math.random() * 60)) - 30;
-            console.log(rotation);
             h.style.transform = `rotate(${rotation}deg)`;
             h.style.webkitTransform = `rotate(${rotation}deg)`;
             h.style.mozTransform = `rotate(${rotation}deg)`;

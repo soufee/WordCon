@@ -300,3 +300,10 @@ body {
 .confirm img {
     width: 100%
 }
+
+ .raz {
+     all: unset;
+     -moz-appearance: textfield;
+     width: 3em;
+     text-align: center;
+ }

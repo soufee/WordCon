@@ -4,20 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello express</title>
+    <title>Word Con</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="row">
-                <div class="logo">
-                    <img src="logo/logo.svg" alt="logo">
-                    <!--тут поменять лого-->
-                </div>
-            </div>
+            <!--<div class="row">-->
+                <!--<div class="logo">-->
+                    <!--<img src="logo/logo.svg" alt="logo">-->
+                    <!--&lt;!&ndash;тут поменять лого&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
 <!--тут меню-->
+            <nav>
+                <ul class="topmenu">
+                    <li><a href="index.html" class="active">Главная<span class="fa fa-angle-down"></span></a>
+                    </li>
+                    <li><a href="">Словари</a>
+                        <ul class="submenu">
+                            <li><a href="">Мой словарь</a></li>
+                            <li><a href="">Выученные</a></li>
+                            <li><a href="">По темам<span class="fa fa-angle-down"></span></a>
+                                <ul class="submenu">
+                                    <li><a href="">Самые популярные</a></li>
+                                    <li><a href="">Компьютеры и IT</a></li>
+                                    <li><a href="">Бытовое общение</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">Грамматика</a></li>
+                    <li><a href="">Контакты</a></li>
+                    <li><a href="">О методике</a></li>
+                </ul>
+            </nav>
             <button class="memory__btn">Запоминать</button>
         </div>
     </header>
